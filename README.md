@@ -26,9 +26,17 @@ Construire un modèle de machine learning (Random Forest Regressor) pour prédir
     * smoker et sex → booléens
     * region → renommée en français (southwest → Nord, etc.)
     * Séparation des données en X (features) et y (target)
+      
+# *🧠 Modélisation*      
+      
+* Pipeline avec :
+  * StandardScaler pour les variables numériques
+  * OneHotEncoder pour les variables catégorielles
+  * RandomForestRegressor comme modèle
+* Optimisation des hyperparamètres avec GridSearchCV :
+  * n_estimators, max_depth, min_samples_split, min_samples_leaf
 
-
-
+# *📈 Évaluation*
 
 
 

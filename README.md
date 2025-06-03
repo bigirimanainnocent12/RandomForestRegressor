@@ -38,6 +38,21 @@ Construire un modèle de machine learning (Random Forest Regressor) pour prédir
 
 # *📈 Évaluation*
 
+* Meilleurs paramètres affichés
+* Métriques :
+    * RMSE (Root Mean Squared Error)
+    * R² (coefficient de détermination)
+    * MAPE (Mean Absolute Percentage Error)
+* Visualisation des résidus avec Yellowbrick
+
+# *💾 Sauvegarde & Prédiction*
+
+* Le modèle est sauvegardé avec joblib
+* Une campagne de test est créée pour prédire les frais d’un profil fictif :
+
+| age | sex   | bmi  | children | smoker | region |
+|-----|-------|------|----------|--------|--------|
+| 24  | False | 23   | 2        | True   | Nord   |
 
 
 

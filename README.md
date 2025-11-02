@@ -4,16 +4,25 @@ Construire un modèle de machine learning (Random Forest Regressor) pour prédir
 # **📋 Table des matières**
 
 À propos du projet
+
 Dataset
+
 Architecture du projet
+
 Technologies utilisées
+
 Installation
+
 Utilisation
+
 Méthodologie
+
 Résultats
+
 API REST
+
 Analyse de sensibilité
-Auteur
+
 
 # **🎯 À propos du projet**
 Ce projet vise à construire un modèle de Machine Learning pour prédire les frais d'assurance santé en fonction de caractéristiques personnelles et comportementales des assurés. L'objectif est d'améliorer l'efficacité et la rentabilité des compagnies d'assurance maladie en leur permettant d'évaluer plus précisément les risques et de tarifer leurs offres.

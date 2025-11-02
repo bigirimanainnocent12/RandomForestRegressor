@@ -48,12 +48,19 @@ Source : Kaggle - Medical Insurance Price Prediction
 
 # **🏗️ Architecture du projet**
 📦 projet-assurance
+
 ├── 📄 assurance.py          # Script principal
+
 ├── 📄 application.py        # API FastAPI
+
 ├── 📄 modele.pkl           # Modèle entraîné sauvegardé
+
 ├── 📄 campagne.csv         # Exemple de données de test
+
 ├── 📁 static/
+
 │   └── favicon.ico
+
 └── 📄 README.md
 🛠️ Technologies utilisées
 Data Science & Machine Learning

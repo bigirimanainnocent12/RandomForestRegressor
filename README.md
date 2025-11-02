@@ -27,8 +27,18 @@ Problématique
 Comment construire un modèle d'apprentissage automatique pour améliorer l'efficacité et la rentabilité des compagnies d'assurance maladie ?
 # **📊 Dataset**
 L'ensemble de données contient 27 000 observations avec 7 variables :
-VariableTypeDescriptionageQuantitativeÂge de l'assurésexQualitative binaireSexe (Male/Female)bmiQuantitativeIndice de Masse CorporellechildrenQuantitativeNombre d'enfants à chargesmokerQualitative binaireStatut fumeur (Yes/No)regionQualitativeRégion de résidence (4 modalités)chargesQuantitativeFrais médicaux (variable cible)
+
+Variable      Type                   Description
+age         Quantitative               Âge de l'assuré
+sex         Qualitative binaire        Sexe (Male/Female)
+bmi         Quantitative               Indice de Masse Corporelle
+children    Quantitative               Nombre d'enfants à charge
+smoker      Qualitative binaire        Statut fumeur (Yes/No)
+region      Qualitative                Région de résidence (4 modalités)
+charges    Quantitative                Frais médicaux (variable cible)
+
 Source : Kaggle - Medical Insurance Price Prediction
+
 # **🏗️ Architecture du projet**
 📦 projet-assurance
 ├── 📄 assurance.py          # Script principal

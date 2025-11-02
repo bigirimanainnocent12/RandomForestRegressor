@@ -49,62 +49,58 @@ Source : Kaggle - Medical Insurance Price Prediction
 # **🏗️ Architecture du projet**
 📦 projet-assurance
 
-├── 📄 assurance.py          # Script principal
+├── 📄 assurance.py          
 
-├── 📄 application.py        # API FastAPI
+├── 📄 application.py        
 
-├── 📄 modele.pkl           # Modèle entraîné sauvegardé
+├── 📄 modele.pkl          
 
-├── 📄 campagne.csv         # Exemple de données de test
+├── 📄 campagne.csv       
 
 ├── 📁 static/
 
 │   └── favicon.ico
 
 └── 📄 README.md
-🛠️ Technologies utilisées
-Data Science & Machine Learning
 
-Python 3.8+
-pandas - Manipulation de données
-numpy - Calculs numériques
-scikit-learn - Modèle RandomForest et preprocessing
-OpenTURNS - Analyse de sensibilité (indices de Sobol)
+# **🛠️ Technologies utilisées**
 
-Visualisation
+*Data Science & Machine Learning*
 
-matplotlib - Graphiques statistiques
-seaborn - Visualisations avancées
-yellowbrick - Diagnostics de régression
+1. Python 
 
-Déploiement
+2. pandas - Manipulation de données
 
-FastAPI - API REST
-uvicorn - Serveur ASGI
-joblib - Sérialisation du modèle
-Pydantic - Validation des données
+3. numpy - Calculs numériques
 
-# **📥 Installation**
-*Prérequis*
-bashpython >= 3.8
-pip >= 21.0
-Étapes d'installation
+4. scikit-learn - Modèle RandomForest et preprocessing
 
-Cloner le repository
+5. OpenTURNS - Analyse de sensibilité (indices de Sobol)
 
-bashgit clone https://github.com/votre-username/projet-assurance.git
-cd projet-assurance
+*Visualisation*
 
-Créer un environnement virtuel
+1. matplotlib - Graphiques statistiques
+2. seaborn - Visualisations avancées
+3. yellowbrick - Diagnostics de régression
 
-bashpython -m venv venv
-venv\Scripts\activate  # Windows
+*Déploiement*
 
-*Installer les dépendances*
+1. FastAPI - API REST
+   
+2. uvicorn - Serveur ASGI
+   
+3. joblib - Sérialisation du modèle
+   
+4. Pydantic - Validation des données
 
-bashpip install pandas numpy matplotlib seaborn scikit-learn
+
+
+**Installer les dépendances**
+
+pip install pandas numpy matplotlib seaborn scikit-learn
 pip install kagglehub joblib openturns yellowbrick
 pip install fastapi uvicorn pydantic
+
 # **🚀 Utilisation**
 
 1. Entraînement du modèle
@@ -130,100 +126,6 @@ pip install fastapi uvicorn pydantic
 
 Swagger UI : http://localhost:8000/docs
 ReDoc : http://localhost:8000/redoc
-
-3. Exemple de prédiction
-4. 
-   "http://localhost:8000/deploiement/?age=24&sexe=Homme&bmi=23&children=2&smoker=Yes&region=Nord"
-
-
-
-# Prédiction
-prediction = model.predict(data)
-print(f"Charges estimées : ${prediction[0]:,.2f}")
-🔬 Méthodologie
-1. Prétraitement des données
-
-Encodage des variables catégorielles (sexe, fumeur, région)
-Standardisation des variables numériques
-Pipeline scikit-learn pour automatisation
-
-2. Modélisation
-
-Algorithme : RandomForestRegressor
-Optimisation : GridSearchCV avec validation croisée (5-fold)
-Hyperparamètres optimisés :
-
-n_estimators : [80, 90, 100, 200]
-max_depth : [5, 10, 15, 20, 25, 30, None]
-min_samples_split : [2, 5, 10, 15, 20]
-min_samples_leaf : [8, 10, 20, 25]
-max_features : ['sqrt', 'log2', None]
-
-
-
-3. Évaluation
-
-RMSE (Root Mean Squared Error)
-R² (Coefficient de détermination)
-MAPE (Mean Absolute Percentage Error)
-Analyse des résidus (Yellowbrick)
-Courbes d'apprentissage
-
-📈 Résultats
-Les performances du modèle sont évaluées sur l'ensemble de test (30% des données) :
-Métriques de performance :
-├── RMSE : [À remplir après exécution]
-├── R² : [À remplir après exécution]
-└── MAPE : [À remplir après exécution]
-Variables les plus importantes
-L'analyse montre que les facteurs clés influençant les charges sont :
-
-Statut fumeur (smoker)
-Âge (age)
-IMC (bmi)
-
-🌐 API REST
-Endpoints disponibles
-1. Information générale
-httpGET /
-Retourne les informations sur l'API.
-2. Prédiction
-httpGET /deploiement/
-Paramètres :
-
-age (int) : Âge de l'assuré
-sexe (enum) : "Homme" ou "Femme"
-bmi (float) : Indice de Masse Corporelle
-children (int) : Nombre d'enfants
-smoker (enum) : "Yes" ou "Non"
-region (enum) : "Nord", "Sud", "Est" ou "Ouest"
-
-Réponse :
-json{
-  "Sa charge est de ": 12345.67
-}
-Exemple avec Postman
-GET http://localhost:8000/deploiement/?age=35&sexe=Femme&bmi=28.5&children=1&smoker=Non&region=Sud
-🔍 Analyse de sensibilité
-Le projet inclut une analyse de sensibilité complète utilisant les indices de Sobol via OpenTURNS.
-Objectif
-Identifier quelles variables ont le plus d'impact sur les prédictions du modèle.
-Indices calculés
-
-Indices de premier ordre : Effet direct de chaque variable
-Indices totaux : Effet direct + interactions
-
-Interprétation
-Plus l'indice de Sobol est élevé, plus la variable est influente dans les prédictions du modèle.
-📝 Statistiques descriptives
-Le code génère des analyses statistiques complètes :
-
-Distribution des variables par catégorie
-Corrélations entre variables
-Boxplots et scatter plots
-Graphiques circulaires pour les variables catégorielles
-
-
 
 
 

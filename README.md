@@ -1,65 +1,7 @@
 # *🎯 Objectif*
 Construire un modèle de machine learning (Random Forest Regressor) pour prédire les frais médicaux en fonction de caractéristiques personnelles (âge, IMC, tabagisme, etc.), afin d’aider les compagnies d’assurance à mieux évaluer les risques et fixer les tarifs.
-
-# *📊 Données*
-
-* Source : Kaggle (harishkumardatalab/medical-insurance-price-prediction)
-  
-* Taille : 2 700 lignes, 7 colonnes
-  
-* Variables :
-   * age : Âge
-   * sex : Sexe
-   * bmi : Indice de masse corporelle
-   * children : Nombre d’enfants
-   * smoker : Tabagisme (oui/non)
-   * region : Région
-   * charges : Frais médicaux (cible)
      
-# *🧹 Prétraitement*
-
-* Vérification des valeurs manquantes et aberrantes
-  
-* Visualisations : scatter plots, boxplots, camemberts
-  
-* Encodage :
-    * smoker et sex → booléens
-    * region → renommée en français (southwest → Nord, etc.)
-    * Séparation des données en X (features) et y (target)
-      
-# *🧠 Modélisation*      
-      
-* Pipeline avec :
-  * StandardScaler pour les variables numériques
-  * OneHotEncoder pour les variables catégorielles
-  * RandomForestRegressor comme modèle
-* Optimisation des hyperparamètres avec GridSearchCV :
-  * n_estimators, max_depth, min_samples_split, min_samples_leaf
-
-# *📈 Évaluation*
-
-* Meilleurs paramètres affichés
-* Métriques :
-    * RMSE (Root Mean Squared Error)
-    * R² (coefficient de détermination)
-    * MAPE (Mean Absolute Percentage Error)
-* Visualisation des résidus avec Yellowbrick
-
-# *💾 Sauvegarde & Prédiction*
-
-* Le modèle est sauvegardé avec joblib
-* Une campagne de test est créée pour prédire les frais d’un profil fictif :
-
-| age | sex   | bmi  | children | smoker | region |
-|-----|-------|------|----------|--------|--------|
-| 24  | False | 23   | 2        | True   | Nord   |
-
-
-
-
-Un projet complet de Machine Learning pour prédire les frais d'assurance santé avec une API REST déployable
-
-📋 Table des matières
+# **📋 Table des matières**
 
 À propos du projet
 Dataset
@@ -73,15 +15,15 @@ API REST
 Analyse de sensibilité
 Auteur
 
-🎯 À propos du projet
+# **🎯 À propos du projet**
 Ce projet vise à construire un modèle de Machine Learning pour prédire les frais d'assurance santé en fonction de caractéristiques personnelles et comportementales des assurés. L'objectif est d'améliorer l'efficacité et la rentabilité des compagnies d'assurance maladie en leur permettant d'évaluer plus précisément les risques et de tarifer leurs offres.
 Problématique
 Comment construire un modèle d'apprentissage automatique pour améliorer l'efficacité et la rentabilité des compagnies d'assurance maladie ?
-📊 Dataset
+# **📊 Dataset**
 L'ensemble de données contient 27 000 observations avec 7 variables :
 VariableTypeDescriptionageQuantitativeÂge de l'assurésexQualitative binaireSexe (Male/Female)bmiQuantitativeIndice de Masse CorporellechildrenQuantitativeNombre d'enfants à chargesmokerQualitative binaireStatut fumeur (Yes/No)regionQualitativeRégion de résidence (4 modalités)chargesQuantitativeFrais médicaux (variable cible)
 Source : Kaggle - Medical Insurance Price Prediction
-🏗️ Architecture du projet
+# **🏗️ Architecture du projet**
 📦 projet-assurance
 ├── 📄 assurance.py          # Script principal
 ├── 📄 application.py        # API FastAPI
@@ -112,8 +54,8 @@ uvicorn - Serveur ASGI
 joblib - Sérialisation du modèle
 Pydantic - Validation des données
 
-📥 Installation
-Prérequis
+# **📥 Installation**
+*Prérequis*
 bashpython >= 3.8
 pip >= 21.0
 Étapes d'installation
@@ -126,55 +68,44 @@ cd projet-assurance
 Créer un environnement virtuel
 
 bashpython -m venv venv
-source venv/bin/activate  # Linux/Mac
-# ou
 venv\Scripts\activate  # Windows
 
-Installer les dépendances
+*Installer les dépendances*
 
 bashpip install pandas numpy matplotlib seaborn scikit-learn
 pip install kagglehub joblib openturns yellowbrick
 pip install fastapi uvicorn pydantic
-🚀 Utilisation
-1. Entraînement du modèle
-bashpython assurance.py
-Le script effectue :
+# **🚀 Utilisation**
 
-✅ Chargement et exploration des données
-✅ Analyse exploratoire (EDA)
-✅ Prétraitement des données
-✅ Optimisation des hyperparamètres (GridSearchCV)
-✅ Évaluation du modèle
-✅ Analyse de sensibilité (Sobol)
-✅ Sauvegarde du modèle (modele.pkl)
+1. Entraînement du modèle
+   
+  bashpython assurance.py
+  Le script effectue :
+
+    ✅ Chargement et exploration des données
+    ✅ Analyse exploratoire (EDA)
+    ✅ Prétraitement des données
+    ✅ Optimisation des hyperparamètres (GridSearchCV)
+    ✅ Évaluation du modèle
+    ✅ Analyse de sensibilité (Sobol)
+    ✅ Sauvegarde du modèle (modele.pkl)
 
 2. Lancement de l'API
-bashpython application.py
-L'API sera accessible sur http://localhost:8000
-Documentation interactive
+   
+  python application.py
+  
+  L'API sera accessible sur http://localhost:8000
+  
+# **Documentation interactive**
 
 Swagger UI : http://localhost:8000/docs
 ReDoc : http://localhost:8000/redoc
 
 3. Exemple de prédiction
-Via l'API (GET request)
-bashcurl "http://localhost:8000/deploiement/?age=24&sexe=Homme&bmi=23&children=2&smoker=Yes&region=Nord"
-Via Python
-pythonimport joblib
-import pandas as pd
+4. 
+   "http://localhost:8000/deploiement/?age=24&sexe=Homme&bmi=23&children=2&smoker=Yes&region=Nord"
 
-# Charger le modèle
-model = joblib.load('modele.pkl')
 
-# Préparer les données
-data = pd.DataFrame({
-    'age': [24],
-    'sex': [True],  # True=Homme, False=Femme
-    'bmi': [23.0],
-    'children': [2],
-    'smoker': [True],  # True=Fumeur, False=Non-fumeur
-    'region': ['Nord']
-})
 
 # Prédiction
 prediction = model.predict(data)

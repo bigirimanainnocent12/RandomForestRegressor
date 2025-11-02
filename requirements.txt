@@ -1,0 +1,12 @@
+ pandas
+  numpy
+  scikit-learn
+  matplotlib
+  seaborn
+  fastapi
+  uvicorn
+  joblib
+  openturns
+  yellowbrick
+  pydantic
+  kagglehub
